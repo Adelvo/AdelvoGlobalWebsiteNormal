@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+
+# HyperFrames caches and render output (regenerable)
+adelvo-showreel/.hyperframes/
+adelvo-showreel/.thumbnails/
+adelvo-showreel/.waveform-cache/
+adelvo-showreel/renders/

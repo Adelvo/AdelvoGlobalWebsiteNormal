@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Adelvo Global — Build a better offer. Win better clients.</title>
+    <meta name="description" content="Offer creation, sales funnels, and cold email. One system to turn prospects into clients." />
+    <link rel="icon" href="assets/adelvo-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <style>
+      :root {
+        --blue: #069ad0;
+        --pink: #dc2f7d;
+        --ink: #062234;
+        --ground: #f9fcfe;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        background: var(--ground);
+        color: var(--ink);
+        font-family: "Google Sans", "Google Sans Flex", system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* ───────── Hero: a 1672 × 941 design that scales as one piece ───────── */
+      .hero {
+        --u: min(calc(100vw / 1672), calc(100vh / 941));
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        isolation: isolate;
+      }
+      @supports (height: 100svh) {
+        .hero {
+          --u: min(calc(100vw / 1672), calc(100svh / 941));
+          min-height: 100svh;
+        }
+      }
+      #hero-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+      .hero-ui {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .js .hero-ui {
+        visibility: hidden;
+      }
+
+      .nav {
+        height: calc(104 * var(--u));
+        padding: 0 calc(67 * var(--u));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: none;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: calc(12 * var(--u));
+      }
+      .brand img {
+        height: calc(46 * var(--u));
+        width: auto;
+        aspect-ratio: 368 / 296;
+        display: block;
+      }
+      .brand-name {
+        font-size: calc(26.5 * var(--u));
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: calc(52 * var(--u));
+        font-size: calc(19.3 * var(--u));
+        white-space: nowrap;
+      }
+      .nav-links a {
+        display: inline-block;
+      }
+      .nav-links a:not(.nav-cta) {
+        transition: color 0.2s;
+      }
+      .nav-links a:first-child {
+        margin-right: calc(5 * var(--u));
+      }
+      .nav-links a:not(.nav-cta):hover {
+        color: var(--blue);
+      }
+      .nav-cta {
+        height: calc(47 * var(--u));
+        padding: 0 calc(28 * var(--u));
+        display: inline-flex !important;
+        align-items: center;
+        border: max(1px, calc(1.5 * var(--u))) solid var(--ink);
+        border-radius: calc(9 * var(--u));
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      .nav-cta:hover {
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .stage-wrap {
+        flex: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .stage {
+        position: relative;
+        flex: none;
+        width: calc(1672 * var(--u));
+        height: calc(837 * var(--u));
+      }
+      .row {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        white-space: nowrap;
+        line-height: 1;
+      }
+      h1 {
+        font-weight: inherit;
+        font-size: inherit;
+      }
+      .h1-a {
+        left: calc(32 * var(--u));
+        top: calc(var(--h1a-top) * var(--u));
+        font-size: calc(var(--h1a-size) * var(--u));
+        font-weight: 700;
+        letter-spacing: -0.03em;
+      }
+      .h1-b {
+        left: calc(16 * var(--u));
+        top: calc(var(--h1b-top) * var(--u));
+        font-size: calc(var(--h1b-size) * var(--u));
+        font-weight: 700;
+        letter-spacing: -0.035em;
+        color: var(--blue);
+      }
+      .h1-b-in {
+        display: inline-block;
+        padding: 0.12em 0.08em;
+        margin: -0.12em 0;
+      }
+      .w {
+        display: inline-block;
+        white-space: pre;
+      }
+      .sub {
+        font-size: calc(var(--sub-size) * var(--u));
+        letter-spacing: -0.01em;
+      }
+      .sub-1 { top: calc(var(--sub1-top) * var(--u)); }
+      .sub-2 { top: calc(var(--sub2-top) * var(--u)); }
+      .cta {
+        position: absolute;
+        left: calc(563 * var(--u));
+        top: calc(553 * var(--u));
+        width: calc(547 * var(--u));
+        height: calc(73 * var(--u));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: calc(13 * var(--u));
+        border-radius: calc(13 * var(--u));
+        background: var(--pink);
+        color: #fff;
+        font-size: calc(var(--cta-size) * var(--u));
+        font-weight: 500;
+        white-space: nowrap;
+      }
+      .cta svg {
+        width: calc(23 * var(--u));
+        height: calc(23 * var(--u));
+        transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .cta:hover svg {
+        transform: translate(3px, -3px);
+      }
+      .explore-row {
+        top: calc(var(--exp-top) * var(--u));
+        font-size: calc(var(--exp-size) * var(--u));
+      }
+      .explore {
+        position: relative;
+        display: inline-block;
+        padding-bottom: calc(5 * var(--u));
+      }
+      .explore-line {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: max(1px, calc(1.6 * var(--u)));
+        background: var(--ink);
+        transform-origin: 0 50%;
+      }
+
+      /* floating service chips */
+      .chip-box {
+        position: absolute;
+        width: calc(98 * var(--u));
+        height: calc(98 * var(--u));
+        border-radius: calc(23 * var(--u));
+        background: #fff;
+        box-shadow:
+          0 calc(22 * var(--u)) calc(44 * var(--u)) rgba(20, 70, 110, 0.1),
+          0 calc(3 * var(--u)) calc(8 * var(--u)) rgba(20, 70, 110, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+      }
+      .chip-box svg {
+        width: 66%;
+        height: 66%;
+      }
+      .cb-1 { left: calc(188 * var(--u)); top: calc(119 * var(--u)); rotate: -8deg; }
+      .cb-2 { left: calc(1313 * var(--u)); top: calc(125 * var(--u)); rotate: 8deg; }
+      .cb-3 { left: calc(209 * var(--u)); top: calc(587 * var(--u)); rotate: -8deg; }
+      .chip-label {
+        position: absolute;
+        font-size: calc(var(--lab-size) * var(--u));
+        line-height: 1;
+        white-space: nowrap;
+        pointer-events: none;
+      }
+      .chip-label-in {
+        display: inline-block;
+        padding: 0.15em 0;
+      }
+      .cl-1 { left: calc(308 * var(--u)); top: calc(var(--lab1-top) * var(--u)); }
+      .cl-2 { left: calc(1431 * var(--u)); top: calc(var(--lab2-top) * var(--u)); }
+      .cl-3 { left: calc(328 * var(--u)); top: calc(var(--lab3-top) * var(--u)); }
+
+      /* calibrated against the reference (values in 1672-px design units) */
+      .stage {
+        --h1a-size: 86.3; --h1a-top: 184.2;
+        --h1b-size: 118.5; --h1b-top: 282;
+        --sub-size: 33.6; --sub1-top: 430; --sub2-top: 471;
+        --cta-size: 31;
+        --exp-size: 22.5; --exp-top: 658.3;
+        --lab-size: 22.1; --lab1-top: 144.3; --lab2-top: 166.3; --lab3-top: 618.3;
+      }
+
+      /* logo intro */
+      .intro {
+        position: absolute;
+        left: 50%;
+        top: 48%;
+        width: min(520px, 62vw);
+        aspect-ratio: 368 / 296;
+        margin-left: calc(min(520px, 62vw) / -2);
+        margin-top: calc(min(520px, 62vw) * 0.402 * -1);
+        pointer-events: none;
+        display: none;
+      }
+      .js .intro {
+        display: block;
+      }
+      .intro svg,
+      .intro img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .intro path {
+        fill: none;
+        stroke: url(#intro-grad);
+        stroke-width: 2.4;
+        stroke-linejoin: round;
+      }
+      .intro img {
+        clip-path: circle(0% at 0% 100%);
+      }
+
+      /* ───────── Phones: same pieces, stacked ───────── */
+      @media (max-width: 760px) {
+        .hero { --u: 1px; }
+        .nav { height: 76px; padding: 0 20px; }
+        .brand { gap: 10px; }
+        .brand img { height: 36px; }
+        .brand-name { font-size: 19px; }
+        .nav-links { font-size: 16px; }
+        .nav-links a:not(.nav-cta) { display: none; }
+        .nav-cta { height: 42px; padding: 0 18px; border-radius: 9px; }
+        .stage {
+          position: static;
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 96px 20px 110px;
+          text-align: center;
+        }
+        .row { position: static; white-space: normal; }
+        .h1-a { font-size: clamp(30px, 8.6vw, 44px); line-height: 1.15; left: 0; }
+        .h1-b { font-size: clamp(40px, 11.6vw, 60px); line-height: 1.1; }
+        .sub { font-size: 18px; line-height: 1.4; display: inline; }
+        .sub-1 { margin-top: 18px; }
+        .sub-wrap { max-width: 20em; margin-top: 18px; }
+        .cta {
+          position: static;
+          width: auto;
+          height: auto;
+          margin-top: 28px;
+          padding: 15px 22px;
+          font-size: 18px;
+          gap: 8px;
+          border-radius: 12px;
+        }
+        .cta svg { width: 16px; height: 16px; }
+        .explore-row { margin-top: 20px; font-size: 16px; }
+        .explore { padding-bottom: 4px; }
+        .chip-label { display: none; }
+        .chip-box { width: 56px; height: 56px; border-radius: 14px; }
+        .cb-1 { left: 6%; top: 14px; }
+        .cb-2 { left: auto; right: 6%; top: 14px; }
+        .cb-3 { left: auto; right: 9%; top: auto; bottom: 26px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <canvas id="hero-bg" aria-hidden="true"></canvas>
+
+      <!-- logo intro: draws, fills, then flies into the nav -->
+      <div class="intro" id="intro" aria-hidden="true">
+        <svg viewBox="0 0 368 296">
+          <defs>
+            <linearGradient id="intro-grad" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0" stop-color="#0171f5" />
+              <stop offset="1" stop-color="#17e9fb" />
+            </linearGradient>
+          </defs>
+          <path d="M4 291.5 L4.5 292.8 L111.5 292.8 L178.2 247 L238 204.2 L284 292.5 L365 292.5 L294.8 160.8 L331 129 L346 146 L347.2 146 L355.5 75.8 L289 94.5 L309.5 109.2 L279.5 130 L212.8 4.2 L159.2 3.8 Z" />
+          <path d="M185.8 99 L220 167 L171 196.2 L116.2 226.5 L143.8 173.8 L184.5 99.5 Z" />
+        </svg>
+        <img src="assets/adelvo-logo.png" alt="" />
+      </div>
+
+      <div class="hero-ui">
+        <nav class="nav" aria-label="Main">
+          <a class="brand" href="#top" aria-label="Adelvo Global">
+            <img id="brand-logo" src="assets/adelvo-logo.png" alt="" width="368" height="296" />
+            <span class="brand-name" id="brand-name">ADELVO GLOBAL</span>
+          </a>
+          <div class="nav-links">
+            <a class="nav-i" href="#services">Services</a>
+            <a class="nav-i" href="#approach">Our approach</a>
+            <a class="nav-i nav-cta" href="#contact">Let's talk</a>
+          </div>
+        </nav>
+
+        <main class="stage-wrap">
+          <div class="stage">
+            <div class="chip-box cb-1" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="24.5" fill="none" stroke="#069ad0" stroke-width="7.5" />
+                <circle cx="32" cy="32" r="10.5" fill="#dc2f7d" />
+              </svg>
+            </div>
+            <div class="chip-label cl-1"><span class="chip-label-in">Offer creation</span></div>
+            <div class="chip-box cb-2" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <path d="M6 9 H58 L39 31 V42 H25 V31 Z" fill="#069ad0" stroke="#069ad0" stroke-width="5" stroke-linejoin="round" />
+                <circle cx="32" cy="55" r="6.5" fill="#dc2f7d" />
+              </svg>
+            </div>
+            <div class="chip-label cl-2"><span class="chip-label-in">Sales funnels</span></div>
+            <div class="chip-box cb-3" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <rect x="5" y="16" width="50" height="38" rx="6" fill="none" stroke="#069ad0" stroke-width="5.5" />
+                <path d="M8 21 L30 38 L52 21" fill="none" stroke="#069ad0" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="54" cy="14" r="9.5" fill="#dc2f7d" />
+              </svg>
+            </div>
+            <div class="chip-label cl-3"><span class="chip-label-in">Cold email</span></div>
+
+            <h1>
+              <span class="row h1-a" id="h1-a">Build a better offer.</span>
+              <span class="row h1-b"><span class="h1-b-in" id="h1-b">Win better clients.</span></span>
+            </h1>
+            <p class="sub-wrap">
+              <span class="row sub sub-1 line">Offer creation, sales funnels, and cold email.</span>
+              <span class="row sub sub-2 line">One system to turn prospects into clients.</span>
+            </p>
+            <a class="cta" id="cta" href="#contact">
+              <span id="cta-text">Get 60 days of free cold email</span>
+              <svg id="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4.5 19.5 L19 5 M7 5 H19 V17" />
+              </svg>
+            </a>
+            <div class="row explore-row">
+              <a class="explore" id="explore" href="#approach">
+                <span id="explore-text">Explore our approach</span>
+                <span class="explore-line" id="explore-line"></span>
+              </a>
+            </div>
+          </div>
+        </main>
+      </div>
+    </header>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+      (function () {
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const hero = document.querySelector(".hero");
+        const ui = document.querySelector(".hero-ui");
+        const intro = document.getElementById("intro");
+
+        /* ───────── Halftone background ───────── */
+        const cv = document.getElementById("hero-bg");
+        const ctx = cv.getContext("2d");
+        let W = 0,
+          H = 0;
+        const pulses = []; // [startTime, x, y, strength]
+        const clamp = (v) => Math.min(1, Math.max(0, v));
+        const sm = (a, b, x) => {
+          x = clamp((x - a) / (b - a));
+          return x * x * (3 - 2 * x);
+        };
+        function resize() {
+          const r = hero.getBoundingClientRect();
+          const dpr = Math.min(window.devicePixelRatio || 1, 2);
+          W = Math.round(r.width);
+          H = Math.round(r.height);
+          cv.width = W * dpr;
+          cv.height = H * dpr;
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+        function blob(x, y, r, rgb, a) {
+          const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+          g.addColorStop(0, "rgba(" + rgb + "," + a + ")");
+          g.addColorStop(1, "rgba(" + rgb + ",0)");
+          ctx.fillStyle = g;
+          ctx.fillRect(x - r, y - r, r * 2, r * 2);
+        }
+        const stageEl = document.querySelector(".stage");
+        function draw(t) {
+          // geometry follows the 1672 × 941 design; on phones it follows the viewport
+          const phone = W <= 760;
+          const hr = hero.getBoundingClientRect();
+          const sr = stageEl.getBoundingClientRect();
+          const u = phone ? W / 900 : sr.width / 1672;
+          const CX = phone ? W / 2 : sr.left - hr.left + 836 * u;
+          const CY = phone ? H * 0.5 : sr.top - hr.top + 388 * u;
+          const RX = phone ? W * 0.62 : 686 * u,
+            RY = phone ? H * 0.3 : 357 * u;
+          const P = Math.max(5, 8.2 * u);
+          const f = 1 / Math.max(u, 0.4); // keeps the pattern's scale tied to the design
+
+          ctx.fillStyle = "#f9fcfe";
+          ctx.fillRect(0, 0, W, H);
+
+          const PINK = "246,150,205",
+            BLUE = "120,205,240";
+          const R = Math.max(W, H);
+          blob(-0.03 * W + 20 * Math.sin(t * 0.31), H * 0.42 + 30 * Math.cos(t * 0.27), R * 0.13, PINK, 0.3);
+          blob(W * 1.03 + 30 * Math.sin(t * 0.26 + 1), H * 0.6 + 40 * Math.cos(t * 0.21), R * 0.16, PINK, 0.26);
+          blob(W * 1.0 + 30 * Math.cos(t * 0.33), H * 1.05 + 20 * Math.sin(t * 0.24), R * 0.2, BLUE, 0.3);
+          blob(-0.02 * W, H * 0.7 + 20 * Math.sin(t * 0.2), R * 0.12, BLUE, 0.22);
+          blob(W * 0.04, H * 1.05, R * 0.16, PINK, 0.2);
+
+          const blue = new Path2D(),
+            pink = new Path2D();
+          const live = pulses.some((p) => t - p[0] > 0 && t - p[0] < 2.2);
+          for (let y = P / 2; y < H; y += P) {
+            const dy = (y - H / 2) / (H / 2);
+            const top = 0.35 + 0.65 * sm(-0.95, -0.35, dy);
+            const low = sm(0.42, 1.0, dy);
+            for (let x = P / 2; x < W; x += P) {
+              const ax = Math.abs(x - W / 2) / (W / 2);
+              const w = Math.min(1, sm(0.62, 1.0, ax) * top + sm(0.3, 0.97, ax) * low * 0.85);
+              if (w < 0.01 && !live) continue;
+              let v = 0;
+              if (w >= 0.01) {
+                const X = x * f,
+                  Y = y * f;
+                const n1 = 0.5 + 0.5 * Math.sin(X * 0.0052 + t * 0.5 + 1.7 * Math.sin(Y * 0.0046 - t * 0.3));
+                const n2 = 0.5 + 0.5 * Math.sin((X + Y) * 0.0066 - t * 0.65 + 2 * Math.sin(X * 0.0034 + t * 0.1));
+                const streak = 0.5 + 0.5 * Math.sin((X * 0.6 - Y) * 0.011 + t * 0.2);
+                v = w * (0.22 + 1.3 * n1 * n2 + 0.3 * streak * n1);
+              }
+              if (live) {
+                for (let i = 0; i < pulses.length; i++) {
+                  const p = pulses[i];
+                  const e = t - p[0];
+                  if (e > 0 && e < 2.2) {
+                    const dist = Math.hypot(x - p[1], y - p[2]);
+                    v += Math.exp(-Math.pow((dist - e * 1100 * u) / (110 * u), 2)) * Math.exp(-e * 1.6) * p[3] * (0.25 + 0.75 * w);
+                  }
+                }
+              }
+              const r = P * 0.53 * Math.min(1, v);
+              if (r < 0.35) continue;
+              const c = Math.sin(x * f * 0.0024 - y * f * 0.0019 + t * 0.22 + 2 * Math.sin(y * f * 0.0035 + t * 0.13));
+              const path = c > 0.05 ? pink : blue;
+              path.moveTo(x + r, y);
+              path.arc(x, y, r, 0, 6.2832);
+            }
+          }
+          ctx.fillStyle = "rgba(150,218,244,0.8)";
+          ctx.fill(blue);
+          ctx.fillStyle = "rgba(250,172,216,0.66)";
+          ctx.fill(pink);
+
+          // orbit dots sweep in and settle exactly where the design has them
+          if (!phone) {
+            const sweep = Math.pow(Math.max(0, 1 - t / 5), 2);
+            const dots = [
+              [1, -1.462 - 3.4 * sweep, "#069ad0", 0.15],
+              [0.965, 0.864 - 2.6 * sweep, "#069ad0", 0.5],
+              [0.965, 0.771 - 4.4 * sweep, "#dc2f7d", 0.8],
+            ];
+            for (let i = 0; i < dots.length; i++) {
+              const q = dots[i];
+              const s = sm(q[3], q[3] + 0.5, t);
+              if (s <= 0) continue;
+              ctx.fillStyle = q[2];
+              ctx.beginPath();
+              ctx.arc(CX + RX * q[0] * Math.cos(q[1]), CY + RY * q[0] * Math.sin(q[1]), 8 * u * s, 0, 6.2832);
+              ctx.fill();
+            }
+          }
+        }
+
+        let t0 = null,
+          visible = true,
+          raf = 0;
+        const now = () => (performance.now() - t0) / 1000;
+        function frame() {
+          raf = 0;
+          if (!visible) return;
+          draw(now());
+          raf = requestAnimationFrame(frame);
+        }
+        function startBg() {
+          t0 = performance.now();
+          resize();
+          if (reduce) {
+            t0 -= 8000; // settled state, one still frame
+            draw(8);
+            return;
+          }
+          frame();
+        }
+        window.addEventListener("resize", () => {
+          resize();
+          if (reduce) draw(8);
+        });
+        if ("IntersectionObserver" in window) {
+          new IntersectionObserver((es) => {
+            visible = es[0].isIntersecting;
+            if (visible && !raf && !reduce && t0 !== null) frame();
+          }).observe(hero);
+        }
+
+        /* ───────── Intro + hero build ───────── */
+        function showStatic() {
+          intro.style.display = "none";
+          ui.style.visibility = "visible";
+        }
+        if (reduce || !window.gsap) {
+          startBg();
+          showStatic();
+          return;
+        }
+
+        function splitWords(el) {
+          const words = el.textContent.trim().split(" ");
+          el.textContent = "";
+          return words.map((w, i) => {
+            const s = document.createElement("span");
+            s.className = "w";
+            s.textContent = i < words.length - 1 ? w + " " : w;
+            el.appendChild(s);
+            return s;
+          });
+        }
+
+        function build() {
+          startBg();
+          const h1a = splitWords(document.getElementById("h1-a"));
+          const subWords = [];
+          document.querySelectorAll(".sub.line").forEach((l) => subWords.push.apply(subWords, splitWords(l)));
+
+          const paths = intro.querySelectorAll("path");
+          const introImg = intro.querySelector("img");
+          const introSvg = intro.querySelector("svg");
+          const brandLogo = document.getElementById("brand-logo");
+          const tl = gsap.timeline();
+
+          // 1 · the mark draws itself, then fills along the arrow
+          paths.forEach((p) => {
+            const L = p.getTotalLength();
+            p.style.strokeDasharray = L + " " + L;
+            tl.fromTo(p, { strokeDashoffset: L }, { strokeDashoffset: 0, duration: 1.6, ease: "power2.inOut" }, 0.1);
+          });
+          tl.fromTo(introImg, { clipPath: "circle(0% at 0% 100%)" }, { clipPath: "circle(150% at 0% 100%)", duration: 0.65, ease: "power2.inOut" }, 1.55);
+          tl.to(introSvg, { opacity: 0, duration: 0.2, ease: "none" }, 2.05);
+          tl.call(
+            () => {
+              const r = intro.getBoundingClientRect(),
+                h = hero.getBoundingClientRect();
+              pulses.push([now(), r.left + r.width / 2 - h.left, r.top + r.height / 2 - h.top, 1]);
+            },
+            null,
+            2.16,
+          );
+          tl.to(intro, { scale: 1.09, duration: 0.12, ease: "power2.out" }, 2.16);
+          tl.to(intro, { scale: 1, duration: 0.5, ease: "elastic.out(1, 0.5)" }, 2.28);
+
+          // 2 · the mark flies into its place in the nav
+          tl.set(ui, { visibility: "visible" }, 2.7);
+          tl.to(
+            intro,
+            {
+              x: () => {
+                const a = intro.getBoundingClientRect(),
+                  b = brandLogo.getBoundingClientRect();
+                return b.left + b.width / 2 - (a.left + a.width / 2);
+              },
+              y: () => {
+                const a = intro.getBoundingClientRect(),
+                  b = brandLogo.getBoundingClientRect();
+                return b.top + b.height / 2 - (a.top + a.height / 2);
+              },
+              scale: () => brandLogo.getBoundingClientRect().width / intro.offsetWidth,
+              duration: 0.75,
+              ease: "power3.inOut",
+            },
+            2.75,
+          );
+          tl.fromTo(intro, { filter: "blur(0px)" }, { keyframes: { filter: ["blur(0px)", "blur(6px)", "blur(0px)"] }, duration: 0.75, ease: "none", immediateRender: false }, 2.75);
+          tl.fromTo(brandLogo, { opacity: 0 }, { opacity: 1, duration: 0.01 }, 3.5);
+          tl.set(intro, { display: "none" }, 3.52);
+
+          // 3 · the homepage builds itself
+          const T = 2.95;
+          tl.fromTo(h1a, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.22, ease: "power2.out", stagger: 0.07 }, T);
+          tl.fromTo("#h1-b", { clipPath: "inset(0% 100% 0% 0%)", x: -40 }, { clipPath: "inset(0% 0% 0% 0%)", x: 0, duration: 0.75, ease: "expo.out" }, T + 0.25);
+          tl.fromTo("#brand-name", { clipPath: "inset(0% 100% 0% 0%)", x: -18 }, { clipPath: "inset(0% 0% 0% 0%)", x: 0, duration: 0.6, ease: "expo.out" }, 3.45);
+          tl.fromTo(".nav-i", { y: -26, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "expo.out", stagger: 0.08, clearProps: "transform" }, T + 0.5);
+          tl.fromTo(subWords, { opacity: 0, color: "#b9c6d0" }, { opacity: 1, color: "#062234", duration: 0.28, ease: "power2.out", stagger: 0.05 }, T + 0.75);
+          [
+            [".cb-1", ".cl-1", -1, T + 0.9],
+            [".cb-2", ".cl-2", 1, T + 1.02],
+            [".cb-3", ".cl-3", -1, T + 1.14],
+          ].forEach(([box, lab, dir, at]) => {
+            tl.fromTo(box, { x: dir * 420, rotation: dir * 70, opacity: 0 }, { x: 0, rotation: 0, opacity: 1, duration: 0.8, ease: "back.out(1.3)", clearProps: "transform" }, at);
+            tl.fromTo(lab + " .chip-label-in", { clipPath: "inset(0% 100% 0% 0%)", x: -24 }, { clipPath: "inset(0% 0% 0% 0%)", x: 0, duration: 0.5, ease: "expo.out" }, at + 0.3);
+          });
+          tl.fromTo("#cta", { opacity: 0 }, { opacity: 1, duration: 0.08, ease: "none" }, T + 1.45);
+          tl.fromTo("#cta", { clipPath: "inset(0% 43% 0% 43% round 13px)", scale: 0.7 }, { clipPath: "inset(0% 0% 0% 0% round 13px)", scale: 1, duration: 0.55, ease: "expo.out", clearProps: "clipPath,transform" }, T + 1.45);
+          tl.fromTo("#cta-text", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "none" }, T + 1.65);
+          tl.fromTo("#cta-arrow", { x: -18, y: 18, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.4, ease: "power3.out", clearProps: "transform" }, T + 1.78);
+          tl.fromTo("#explore-text", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "none" }, T + 1.85);
+          tl.fromTo("#explore-line", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, T + 1.92);
+
+          // a click on the CTA sends a ripple through the halftone
+          document.getElementById("cta").addEventListener("pointerdown", (e) => {
+            const h = hero.getBoundingClientRect();
+            pulses.push([now(), e.clientX - h.left, e.clientY - h.top, 0.8]);
+            if (pulses.length > 4) pulses.shift();
+          });
+        }
+
+        // wait for the font so the split words measure correctly, but never hang on it
+        let started = false;
+        const go = () => {
+          if (started) return;
+          started = true;
+          build();
+        };
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(go);
+        setTimeout(go, 1200);
+      })();
+    </script>
+    <noscript>
+      <style>
+        .hero-ui { visibility: visible !important; }
+        .intro { display: none !important; }
+      </style>
+    </noscript>
+  </body>
+</html>

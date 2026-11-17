@@ -1,0 +1,138 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #f7fbfd;
+    }
+    #bg-canvas {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+    }
+  </style>
+  <div id="root" data-composition-id="bg" data-width="1920" data-height="1080">
+    <canvas id="bg-canvas" width="1920" height="1080" data-layout-ignore></canvas>
+  </div>
+  <script>
+    (function () {
+      const DUR = 20.5;
+      const W = 1920,
+        H = 1080,
+        P = 15; // halftone pitch in px
+      const cv = document.getElementById("bg-canvas");
+      const ctx = cv.getContext("2d");
+      const CX = 960,
+        CY = 565;
+      // Ripples: [time, originX, originY, strength] — logo fill, CTA click
+      const PULSES = [
+        [2.2, 960, 520, 1],
+        [17.75, 960, 796, 0.8],
+      ];
+      const clamp = (v) => Math.min(1, Math.max(0, v));
+      const sm = (a, b, x) => {
+        x = clamp((x - a) / (b - a));
+        return x * x * (3 - 2 * x);
+      };
+
+      function blob(x, y, r, rgb, a) {
+        const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+        g.addColorStop(0, "rgba(" + rgb + "," + a + ")");
+        g.addColorStop(1, "rgba(" + rgb + ",0)");
+        ctx.fillStyle = g;
+        ctx.fillRect(x - r, y - r, r * 2, r * 2);
+      }
+
+      function draw(t) {
+        ctx.fillStyle = "#f7fbfd";
+        ctx.fillRect(0, 0, W, H);
+
+        // soft colour clouds in the corners
+        const PINK = "223,47,127",
+          BLUE = "17,151,213";
+        blob(60 + 60 * Math.sin(t * 0.31), 330 + 50 * Math.cos(t * 0.27), 520, PINK, 0.16);
+        blob(110 + 70 * Math.cos(t * 0.22), 960 + 40 * Math.sin(t * 0.3), 560, BLUE, 0.2);
+        blob(1860 + 60 * Math.sin(t * 0.26 + 1), 520 + 70 * Math.cos(t * 0.21), 540, PINK, 0.17);
+        blob(1800 + 50 * Math.cos(t * 0.33), 1010 + 40 * Math.sin(t * 0.24), 580, BLUE, 0.2);
+        blob(180 + 40 * Math.sin(t * 0.2), 90, 420, BLUE, 0.14);
+
+        // halftone field
+        const blue = new Path2D(),
+          pink = new Path2D();
+        for (let y = P / 2; y < H; y += P) {
+          const dy = (y - CY) / 610;
+          for (let x = P / 2; x < W; x += P) {
+            const dx = (x - CX) / 960;
+            const d = Math.sqrt(dx * dx + dy * dy);
+            const w = sm(0.64, 1.16, d);
+            let v = 0;
+            if (w > 0.01) {
+              const n1 = 0.5 + 0.5 * Math.sin(x * 0.0046 + t * 0.55 + 1.7 * Math.sin(y * 0.004 - t * 0.32));
+              const n2 = 0.5 + 0.5 * Math.sin((x + y) * 0.0058 - t * 0.75 + 2 * Math.sin(x * 0.003 + t * 0.1));
+              v = w * (0.3 + 1.25 * n1 * n2);
+            }
+            for (let i = 0; i < PULSES.length; i++) {
+              const p = PULSES[i];
+              const e = t - p[0];
+              if (e > 0 && e < 2.2) {
+                const dist = Math.hypot(x - p[1], y - p[2]);
+                const b = Math.exp(-Math.pow((dist - e * 1250) / 120, 2)) * Math.exp(-e * 1.5) * p[3];
+                v += b * (0.3 + 0.7 * w);
+              }
+            }
+            const r = 6.2 * Math.min(1, v);
+            if (r < 0.45) continue;
+            const c = Math.sin(x * 0.0021 - y * 0.0017 + t * 0.25 + 2 * Math.sin(y * 0.0031 + t * 0.15));
+            const path = c > 0.1 ? pink : blue;
+            path.moveTo(x + r, y);
+            path.arc(x, y, r, 0, 6.2832);
+          }
+        }
+        ctx.fillStyle = "rgba(17,151,213,0.46)";
+        ctx.fill(blue);
+        ctx.fillStyle = "rgba(223,47,127,0.38)";
+        ctx.fill(pink);
+
+        // orbit rings draw on
+        const pr = sm(0.05, 2.1, t);
+        ctx.lineWidth = 1.5;
+        ctx.strokeStyle = "rgba(12,34,54,0.11)";
+        if (pr > 0) {
+          ctx.beginPath();
+          ctx.ellipse(CX, CY, 790, 410, 0, -1.5708, -1.5708 + pr * 6.2832);
+          ctx.stroke();
+          ctx.strokeStyle = "rgba(12,34,54,0.07)";
+          ctx.beginPath();
+          ctx.ellipse(CX, CY, 730, 378, 0, 1.5708, 1.5708 - pr * 6.2832, true);
+          ctx.stroke();
+        }
+
+        // orbit dots: sweep fast early, settle on the reference positions
+        const sweep = Math.pow(Math.max(0, 1 - t / 15.5), 2);
+        const drift = 0.02 * (DUR - t);
+        const dots = [
+          [790, 410, -1.463 - drift - 3.4 * sweep, "#1197d5", 0.15],
+          [730, 378, 0.865 - drift - 2.6 * sweep, "#1197d5", 0.5],
+          [790, 410, 0.771 - drift - 4.4 * sweep, "#df2f7f", 0.8],
+        ];
+        for (let i = 0; i < dots.length; i++) {
+          const q = dots[i];
+          const s = sm(q[4], q[4] + 0.5, t);
+          if (s <= 0) continue;
+          ctx.fillStyle = q[3];
+          ctx.beginPath();
+          ctx.arc(CX + q[0] * Math.cos(q[2]), CY + q[1] * Math.sin(q[2]), 8.5 * s, 0, 6.2832);
+          ctx.fill();
+        }
+      }
+
+      const clock = { t: 0 };
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(clock, { t: 0 }, { t: DUR, duration: DUR, ease: "none", onUpdate: () => draw(clock.t) }, 0);
+      draw(0);
+      window.__timelines["bg"] = tl;
+    })();
+  </script>
+</template>

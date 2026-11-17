@@ -1,0 +1,290 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      font-family: "Poppins", sans-serif;
+      color: var(--ink, #0c2236);
+    }
+    #in-stage {
+      position: absolute;
+      inset: 0;
+    }
+    #in-logo {
+      position: absolute;
+      left: 700px;
+      top: 311px;
+      width: 520px;
+      height: 418px;
+    }
+    #in-logo-move {
+      position: absolute;
+      inset: 0;
+    }
+    #in-logo-stroke,
+    #in-logo-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    #in-logo-stroke path {
+      fill: none;
+      stroke: url(#in-grad);
+      stroke-width: 2.4;
+      stroke-linejoin: round;
+    }
+    .in-line {
+      position: absolute;
+      left: 0;
+      width: 1920px;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: -0.035em;
+      white-space: nowrap;
+    }
+    #in-l1 {
+      top: 322px;
+      font-size: 104px;
+      line-height: 130px;
+    }
+    #in-l2 {
+      top: 452px;
+      font-size: 142px;
+      line-height: 180px;
+      color: var(--blue, #1197d5);
+    }
+    #in-sub {
+      top: 676px;
+      font-size: 40px;
+      line-height: 56px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+    .in-mask {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: top;
+      padding: 0 0.04em;
+    }
+    .in-w,
+    .in-ch,
+    .in-sw {
+      display: inline-block;
+      white-space: pre;
+    }
+    .in-chip {
+      position: absolute;
+      width: 112px;
+      height: 112px;
+    }
+    .in-chip-box {
+      width: 112px;
+      height: 112px;
+      border-radius: 28px;
+      background: #fff;
+      box-shadow:
+        0 18px 40px rgba(12, 34, 54, 0.1),
+        0 2px 6px rgba(12, 34, 54, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .in-chip-box svg {
+      width: 68px;
+      height: 68px;
+    }
+    #in-flood {
+      position: absolute;
+      left: 227px;
+      top: 298px;
+      width: 112px;
+      height: 112px;
+    }
+    #in-flood-dot {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      background: var(--blue, #1197d5);
+    }
+  </style>
+
+  <div id="root" data-composition-id="intro" data-width="1920" data-height="1080">
+    <div id="in-stage">
+      <div id="in-logo" class="clip" data-start="0" data-duration="7.7" data-track-index="1">
+        <div id="in-logo-move">
+          <svg id="in-logo-stroke" viewBox="0 0 368 296">
+            <defs>
+              <linearGradient id="in-grad" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0" stop-color="#0171f5" />
+                <stop offset="1" stop-color="#17e9fb" />
+              </linearGradient>
+            </defs>
+            <path
+              class="in-sp"
+              d="M4 291.5 L4.5 292.8 L111.5 292.8 L178.2 247 L238 204.2 L284 292.5 L365 292.5 L294.8 160.8 L331 129 L346 146 L347.2 146 L355.5 75.8 L289 94.5 L309.5 109.2 L279.5 130 L212.8 4.2 L159.2 3.8 Z"
+            />
+            <path
+              class="in-sp"
+              d="M185.8 99 L220 167 L171 196.2 L116.2 226.5 L143.8 173.8 L184.5 99.5 Z"
+            />
+          </svg>
+          <img id="in-logo-fill" src="assets/adelvo-logo.png" alt="Adelvo Global" />
+        </div>
+      </div>
+
+      <div id="in-l1" class="in-line clip" data-start="3.2" data-duration="4.5" data-track-index="2">
+        <span class="in-mask" data-layout-allow-overflow><span class="in-w">Build </span></span
+        ><span class="in-mask" data-layout-allow-overflow><span class="in-w">a </span></span
+        ><span class="in-mask" data-layout-allow-overflow><span class="in-w">better </span></span
+        ><span class="in-mask" data-layout-allow-overflow><span class="in-w">offer.</span></span>
+      </div>
+      <div id="in-l2" class="in-line clip" data-start="3.7" data-duration="4" data-track-index="3">
+        Win better clients.
+      </div>
+      <div id="in-sub" class="in-line clip" data-start="4.9" data-duration="2.8" data-track-index="4">
+        One system to turn prospects into clients.
+      </div>
+
+      <div id="in-chip1" class="in-chip clip" data-start="4.45" data-duration="3.25" data-track-index="5">
+        <div class="in-chip-box">
+          <svg viewBox="0 0 64 64">
+            <circle cx="32" cy="32" r="21" fill="none" stroke="#1197d5" stroke-width="7" />
+            <circle cx="32" cy="32" r="8.5" fill="#df2f7f" />
+          </svg>
+        </div>
+      </div>
+      <div id="in-chip2" class="in-chip clip" data-start="4.67" data-duration="3.03" data-track-index="6">
+        <div class="in-chip-box">
+          <svg viewBox="0 0 64 64">
+            <path d="M8 10 H56 L38 32 V44 H26 V32 Z" fill="#1197d5" stroke="#1197d5" stroke-width="4" stroke-linejoin="round" />
+            <circle cx="32" cy="55" r="5.5" fill="#df2f7f" />
+          </svg>
+        </div>
+      </div>
+      <div id="in-chip3" class="in-chip clip" data-start="4.89" data-duration="2.81" data-track-index="7">
+        <div class="in-chip-box">
+          <svg viewBox="0 0 64 64">
+            <rect x="8" y="17" width="44" height="33" rx="5" fill="none" stroke="#1197d5" stroke-width="5" />
+            <path d="M10 21 L30 36 L50 21" fill="none" stroke="#1197d5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="52" cy="15" r="8" fill="#df2f7f" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div id="in-flood" class="clip" data-start="6.95" data-duration="0.75" data-track-index="8" data-layout-ignore>
+      <div id="in-flood-dot"></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+
+      // split line 2 and the subline
+      function split(id, cls, byWord) {
+        const el = document.getElementById(id);
+        const text = el.textContent.trim();
+        el.textContent = "";
+        const parts = byWord ? text.split(" ").map((w, i, a) => (i < a.length - 1 ? w + " " : w)) : Array.from(text);
+        return parts.map((p) => {
+          const s = document.createElement("span");
+          s.className = cls;
+          s.textContent = p;
+          el.appendChild(s);
+          return s;
+        });
+      }
+      const chars = split("in-l2", "in-ch", false);
+      const subWords = split("in-sub", "in-sw", true);
+
+      // 1. the mark draws itself, then fills along the arrow
+      gsap.utils.toArray(".in-sp").forEach((p) => {
+        const L = p.getTotalLength();
+        p.style.strokeDasharray = L + " " + L;
+        tl.fromTo(p, { strokeDashoffset: L * 0.72 }, { strokeDashoffset: 0, duration: 1.7, ease: "power2.inOut" }, 0);
+      });
+      tl.fromTo(
+        "#in-logo-fill",
+        { clipPath: "circle(0% at 0% 100%)" },
+        { clipPath: "circle(150% at 0% 100%)", duration: 0.65, ease: "power2.inOut" },
+        1.55,
+      );
+      tl.fromTo("#in-logo-stroke", { opacity: 1 }, { opacity: 0, duration: 0.2, ease: "none" }, 2.05);
+      tl.fromTo("#in-logo-move", { scale: 1 }, { scale: 1.09, duration: 0.12, ease: "power2.out" }, 2.16);
+      tl.to("#in-logo-move", { scale: 1, duration: 0.5, ease: "elastic.out(1, 0.5)" }, 2.28);
+
+      // 2. the mark lifts, the headline lands under it
+      tl.to("#in-logo-move", { y: -298, scale: 0.3, duration: 0.65, ease: "power3.inOut" }, 2.8);
+      tl.fromTo(
+        "#in-logo-move",
+        { filter: "blur(0px)" },
+        { keyframes: { filter: ["blur(0px)", "blur(7px)", "blur(0px)"] }, duration: 0.65, ease: "none" },
+        2.8,
+      );
+      tl.fromTo(".in-w", { yPercent: 112 }, { yPercent: 0, duration: 0.65, ease: "expo.out", stagger: 0.08 }, 3.22);
+      tl.fromTo(
+        chars,
+        { opacity: 0, yPercent: 38, filter: "blur(12px)" },
+        { opacity: 1, yPercent: 0, filter: "blur(0px)", duration: 0.5, ease: "power4.out", stagger: 0.022 },
+        3.75,
+      );
+
+      // 3. three services swing in along the orbit
+      const RX = 790,
+        RY = 410,
+        CX = 960,
+        CY = 565;
+      const chips = [
+        ["#in-chip1", -2.6, -1.5, -8, 4.47],
+        ["#in-chip2", -0.5, -1.7, 8, 4.69],
+        ["#in-chip3", 2.45, -1.6, -8, 4.91],
+      ];
+      chips.forEach(([sel, end, sweep, rot, at]) => {
+        const el = document.querySelector(sel);
+        const ex = CX + RX * Math.cos(end),
+          ey = CY + RY * Math.sin(end);
+        el.style.left = ex - 56 + "px";
+        el.style.top = ey - 56 + "px";
+        const xs = [],
+          ys = [];
+        for (let i = 0; i <= 14; i++) {
+          const a = end + sweep * (1 - i / 14);
+          xs.push(CX + RX * Math.cos(a) - ex);
+          ys.push(CY + RY * Math.sin(a) - ey);
+        }
+        const box = el.querySelector(".in-chip-box");
+        tl.fromTo(box, { x: xs[0], y: ys[0] }, { keyframes: { x: xs, y: ys }, duration: 1.05, ease: "expo.out" }, at);
+        tl.fromTo(box, { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "none" }, at);
+        tl.fromTo(
+          box,
+          { scale: 0.35, rotation: rot - 50 },
+          { scale: 1, rotation: rot, duration: 1.05, ease: "back.out(1.6)" },
+          at,
+        );
+      });
+
+      tl.fromTo(
+        subWords,
+        { opacity: 0, color: "#b9c6d0" },
+        { opacity: 1, color: "#0c2236", duration: 0.3, ease: "power2.out", stagger: 0.07 },
+        4.95,
+      );
+
+      // 4. dive through the first chip into its world
+      tl.fromTo("#in-chip1 .in-chip-box", { scale: 1 }, { scale: 1.18, duration: 0.22, ease: "power2.out", immediateRender: false }, 6.78);
+      tl.fromTo(
+        "#in-stage",
+        { scale: 1, transformOrigin: "283px 354px", filter: "blur(0px)" },
+        { scale: 1.75, filter: "blur(6px)", duration: 0.55, ease: "power3.in" },
+        7.0,
+      );
+      tl.fromTo("#in-flood-dot", { scale: 0 }, { scale: 36, duration: 0.55, ease: "power3.in" }, 7.0);
+
+      window.__timelines["intro"] = tl;
+    })();
+  </script>
+</template>

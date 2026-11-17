@@ -1,0 +1,358 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      font-family: "Poppins", sans-serif;
+      color: var(--ink, #0c2236);
+    }
+    .he-abs {
+      position: absolute;
+      white-space: nowrap;
+    }
+    .he-center {
+      position: absolute;
+      left: 0;
+      width: 1920px;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .he-w {
+      display: inline-block;
+      white-space: pre;
+    }
+    /* nav */
+    #he-brand {
+      left: 78px;
+      top: 28px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    #he-brand img {
+      width: 74px;
+      height: 60px;
+      display: block;
+    }
+    #he-brand-name {
+      font-size: 33px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    .he-nav {
+      top: 40px;
+      font-size: 28px;
+      line-height: 40px;
+      font-weight: 400;
+    }
+    #he-talk-box {
+      width: 176px;
+      height: 60px;
+      border: 2px solid var(--ink, #0c2236);
+      border-radius: 11px;
+      font-size: 28px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* headline */
+    #he-h1 {
+      top: 316px;
+      font-size: 98px;
+      line-height: 126px;
+      font-weight: 600;
+      letter-spacing: -0.035em;
+    }
+    #he-h2 {
+      top: 428px;
+      font-size: 132px;
+      line-height: 164px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: var(--blue, #1197d5);
+    }
+    #he-h2-in {
+      display: inline-block;
+      padding: 0 0.08em;
+    }
+    .he-sub {
+      font-size: 37px;
+      line-height: 48px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+    /* CTA */
+    #he-cta {
+      left: 646px;
+      top: 754px;
+      width: 628px;
+      height: 86px;
+    }
+    #he-cta-btn {
+      width: 628px;
+      height: 86px;
+      border-radius: 13px;
+      background: var(--pink, #df2f7f);
+      color: #fff;
+      font-size: 35px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      box-shadow: 0 14px 30px rgba(223, 47, 127, 0.22);
+    }
+    #he-cta-btn svg {
+      width: 30px;
+      height: 30px;
+    }
+    #he-explore {
+      top: 866px;
+      font-size: 28px;
+      line-height: 40px;
+      font-weight: 400;
+    }
+    #he-explore-in {
+      display: inline-block;
+      position: relative;
+      padding-bottom: 4px;
+    }
+    #he-explore-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: var(--ink, #0c2236);
+    }
+    /* chips */
+    .he-chip {
+      width: 112px;
+      height: 112px;
+    }
+    .he-chip-box {
+      width: 112px;
+      height: 112px;
+      border-radius: 28px;
+      background: #fff;
+      box-shadow:
+        0 18px 40px rgba(12, 34, 54, 0.1),
+        0 2px 6px rgba(12, 34, 54, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .he-chip-box svg {
+      width: 68px;
+      height: 68px;
+    }
+    .he-label {
+      font-size: 30px;
+      line-height: 44px;
+      font-weight: 400;
+    }
+    .he-label span {
+      display: inline-block;
+    }
+    #he-cursor {
+      left: 1245px;
+      top: 800px;
+      width: 84px;
+      height: 84px;
+    }
+    #he-cursor svg {
+      width: 84px;
+      height: 84px;
+      overflow: visible;
+      filter: drop-shadow(0 6px 10px rgba(12, 34, 54, 0.25));
+    }
+  </style>
+
+  <div id="root" data-composition-id="hero" data-width="1920" data-height="1080">
+    <!-- nav -->
+    <div id="he-brand" class="he-abs clip" data-start="0.45" data-duration="5.7" data-track-index="1">
+      <img id="he-brand-logo" src="assets/adelvo-logo.png" alt="Adelvo Global" />
+      <div id="he-brand-name">ADELVO GLOBAL</div>
+    </div>
+    <div id="he-nav1" class="he-abs he-nav clip" style="left: 1286px" data-start="0.6" data-duration="5.55" data-track-index="2">
+      <span class="he-navi he-w">Services</span>
+    </div>
+    <div id="he-nav2" class="he-abs he-nav clip" style="left: 1432px" data-start="0.68" data-duration="5.47" data-track-index="2">
+      <span class="he-navi he-w">Our approach</span>
+    </div>
+    <div id="he-talk" class="he-abs clip" style="left: 1667px; top: 30px" data-start="0.76" data-duration="5.39" data-track-index="2">
+      <div id="he-talk-box" class="he-navi">Let's talk</div>
+    </div>
+
+    <!-- headline -->
+    <div id="he-h1" class="he-center clip" data-start="0.05" data-duration="6.1" data-track-index="3">
+      <span class="he-w he-h1w">Build </span><span class="he-w he-h1w">a </span><span class="he-w he-h1w">better </span
+      ><span class="he-w he-h1w">offer.</span>
+    </div>
+    <div id="he-h2" class="he-center clip" data-start="0.3" data-duration="5.85" data-track-index="4">
+      <span id="he-h2-in">Win better clients.</span>
+    </div>
+    <div id="he-s1" class="he-center he-sub clip" style="top: 606px" data-start="0.85" data-duration="5.3" data-track-index="5">
+      <span class="he-w he-sw">Offer </span><span class="he-w he-sw">creation, </span><span class="he-w he-sw">sales </span
+      ><span class="he-w he-sw">funnels, </span><span class="he-w he-sw">and </span><span class="he-w he-sw">cold </span
+      ><span class="he-w he-sw">email.</span>
+    </div>
+    <div id="he-s2" class="he-center he-sub clip" style="top: 653px" data-start="1.2" data-duration="4.95" data-track-index="5">
+      <span class="he-w he-sw">One </span><span class="he-w he-sw">system </span><span class="he-w he-sw">to </span
+      ><span class="he-w he-sw">turn </span><span class="he-w he-sw">prospects </span><span class="he-w he-sw">into </span
+      ><span class="he-w he-sw">clients.</span>
+    </div>
+
+    <!-- chips + labels -->
+    <div id="he-chip1" class="he-abs he-chip clip" style="left: 216px; top: 256px" data-start="1.0" data-duration="5.15" data-track-index="6">
+      <div class="he-chip-box">
+        <svg viewBox="0 0 64 64">
+          <circle cx="32" cy="32" r="21" fill="none" stroke="#1197d5" stroke-width="7" />
+          <circle cx="32" cy="32" r="8.5" fill="#df2f7f" />
+        </svg>
+      </div>
+    </div>
+    <div id="he-lab1" class="he-abs he-label clip" style="left: 354px; top: 278px" data-start="1.3" data-duration="4.85" data-track-index="7">
+      <span>Offer creation</span>
+    </div>
+    <div id="he-chip2" class="he-abs he-chip clip" style="left: 1508px; top: 263px" data-start="1.12" data-duration="5.03" data-track-index="6">
+      <div class="he-chip-box">
+        <svg viewBox="0 0 64 64">
+          <path d="M8 10 H56 L38 32 V44 H26 V32 Z" fill="#1197d5" stroke="#1197d5" stroke-width="4" stroke-linejoin="round" />
+          <circle cx="32" cy="55" r="5.5" fill="#df2f7f" />
+        </svg>
+      </div>
+    </div>
+    <div id="he-lab2" class="he-abs he-label clip" style="left: 1643px; top: 303px" data-start="1.42" data-duration="4.73" data-track-index="7">
+      <span>Sales funnels</span>
+    </div>
+    <div id="he-chip3" class="he-abs he-chip clip" style="left: 240px; top: 794px" data-start="1.24" data-duration="4.91" data-track-index="6">
+      <div class="he-chip-box">
+        <svg viewBox="0 0 64 64">
+          <rect x="8" y="17" width="44" height="33" rx="5" fill="none" stroke="#1197d5" stroke-width="5" />
+          <path d="M10 21 L30 36 L50 21" fill="none" stroke="#1197d5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="52" cy="15" r="8" fill="#df2f7f" />
+        </svg>
+      </div>
+    </div>
+    <div id="he-lab3" class="he-abs he-label clip" style="left: 378px; top: 822px" data-start="1.54" data-duration="4.61" data-track-index="7">
+      <span>Cold email</span>
+    </div>
+
+    <!-- CTA -->
+    <div id="he-cta" class="he-abs clip" data-start="1.6" data-duration="4.55" data-track-index="8">
+      <div id="he-cta-btn">
+        <span id="he-cta-text">Get 60 days of free cold email</span>
+        <svg id="he-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 18 L18 6 M8 6 H18 V16" />
+        </svg>
+      </div>
+    </div>
+    <div id="he-explore" class="he-center clip" data-start="2.0" data-duration="4.15" data-track-index="9">
+      <span id="he-explore-in"><span id="he-explore-text">Explore our approach</span><span id="he-explore-line"></span></span>
+    </div>
+
+    <!-- cursor -->
+    <div id="he-cursor" class="he-abs clip" data-start="2.5" data-duration="3.65" data-track-index="10" data-layout-ignore>
+      <svg id="he-cursor-svg" viewBox="0 0 28 28">
+        <path d="M4 2 L4 22 L9.5 17 L13.2 25.5 L17 23.8 L13.3 15.5 L21 15 Z" fill="#0c2236" stroke="#fff" stroke-width="1.8" stroke-linejoin="round" />
+      </svg>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+
+      // headline: line 1 sharpens word by word, line 2 wipes in behind a blue edge
+      tl.fromTo(
+        ".he-h1w",
+        { opacity: 0, filter: "blur(10px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power2.out", stagger: 0.07 },
+        0.08,
+      );
+      tl.fromTo(
+        "#he-h2-in",
+        { clipPath: "inset(0% 100% 0% 0%)", x: -40 },
+        { clipPath: "inset(0% 0% 0% 0%)", x: 0, duration: 0.75, ease: "expo.out" },
+        0.32,
+      );
+
+      // nav drops in
+      tl.fromTo("#he-brand-logo", { scale: 0, rotation: -40 }, { scale: 1, rotation: 0, duration: 0.7, ease: "back.out(1.8)" }, 0.47);
+      tl.fromTo(
+        "#he-brand-name",
+        { clipPath: "inset(0% 100% 0% 0%)", x: -18 },
+        { clipPath: "inset(0% 0% 0% 0%)", x: 0, duration: 0.6, ease: "expo.out" },
+        0.6,
+      );
+      tl.fromTo(".he-navi", { y: -26, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "expo.out", stagger: 0.08 }, 0.62);
+
+      // subline: grey to ink
+      tl.fromTo(
+        ".he-sw",
+        { opacity: 0, color: "#b9c6d0" },
+        { opacity: 1, color: "#0c2236", duration: 0.28, ease: "power2.out", stagger: 0.05 },
+        0.87,
+      );
+
+      // chips swing in from the sides and settle tilted, labels wipe out of them
+      [
+        ["#he-chip1", -520, -8, 1.02, "#he-lab1", 1.32],
+        ["#he-chip2", 520, 8, 1.14, "#he-lab2", 1.44],
+        ["#he-chip3", -520, -8, 1.26, "#he-lab3", 1.56],
+      ].forEach(([chip, from, rot, at, lab, lat]) => {
+        tl.fromTo(
+          chip + " .he-chip-box",
+          { x: from, rotation: rot + (from < 0 ? -70 : 70), opacity: 0 },
+          { x: 0, rotation: rot, opacity: 1, duration: 0.8, ease: "back.out(1.3)" },
+          at,
+        );
+        tl.fromTo(
+          lab + " span",
+          { clipPath: "inset(0% 100% 0% 0%)", x: -24 },
+          { clipPath: "inset(0% 0% 0% 0%)", x: 0, duration: 0.5, ease: "expo.out" },
+          lat,
+        );
+      });
+
+      // CTA grows out of a pink pill
+      tl.fromTo(
+        "#he-cta-btn",
+        { clipPath: "inset(0% 43% 0% 43% round 13px)", scale: 0.7 },
+        { clipPath: "inset(0% 0% 0% 0% round 13px)", scale: 1, duration: 0.55, ease: "expo.out" },
+        1.62,
+      );
+      tl.fromTo("#he-cta-text", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "none" }, 1.82);
+      tl.fromTo("#he-cta-arrow", { x: -18, y: 18, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, 1.95);
+      tl.fromTo("#he-explore-text", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "none" }, 2.02);
+      tl.fromTo("#he-explore-line", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 2.1);
+
+      // the cursor arrives and clicks
+      tl.fromTo(
+        "#he-cursor-svg",
+        { x: 760, y: 420 },
+        { keyframes: { x: [760, 520, 250, 70, 0], y: [420, 340, 170, 40, 0] }, duration: 0.85, ease: "power3.out" },
+        2.52,
+      );
+      tl.fromTo("#he-cursor-svg", { scale: 1, transformOrigin: "15% 8%" }, { scale: 0.82, duration: 0.08, ease: "power2.in", immediateRender: false }, 3.32);
+      tl.to("#he-cursor-svg", { scale: 1, duration: 0.3, ease: "power2.out" }, 3.4);
+      tl.to("#he-cta-btn", { scale: 0.94, duration: 0.08, ease: "power2.in" }, 3.32);
+      tl.to("#he-cta-btn", { scale: 1, duration: 0.7, ease: "elastic.out(1, 0.4)" }, 3.4);
+      tl.to("#he-cta-arrow", { x: 30, y: -30, opacity: 0, duration: 0.18, ease: "power2.in" }, 3.4);
+      tl.fromTo("#he-cta-arrow", { x: -22, y: 22, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.35, ease: "power3.out", immediateRender: false }, 3.6);
+      // the click sends a small wave through the chips
+      ["#he-chip1", "#he-chip3", "#he-chip2"].forEach((chip, i) => {
+        tl.to(chip + " .he-chip-box", { y: -16, duration: 0.14, ease: "power2.out" }, 3.5 + i * 0.09);
+        tl.to(chip + " .he-chip-box", { y: 0, duration: 0.6, ease: "elastic.out(1, 0.45)" }, 3.64 + i * 0.09);
+      });
+      tl.to("#he-cursor-svg", { x: 190, y: 120, duration: 0.9, ease: "power2.inOut" }, 4.0);
+
+      window.__timelines["hero"] = tl;
+    })();
+  </script>
+</template>
